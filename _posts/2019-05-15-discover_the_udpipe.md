@@ -2,7 +2,9 @@
 layout: post 
 author: Astromis 
 title: Discover the UDpipe
+use_math: false
 --- 
+
 Recently, I had to get syntactic dependancy tree for my experements with sentence comprssion. There is one trouble - for russian language is pretty hard to find a good parser. Of course, there is syntax net fro google, but I didn't want to dive into problems with dependances, version incopatibility and so on. So, I just was searching more simpler. And I've found. It is Universal Dependency Pipeline or UDPipe by Czech developer. This is c++ written framework that allows tokenize, tag and parse text. All you need is pre-treined model that for some languages can be downloaded or trained by yourself. This is sounds like a doubt, but don't worry - to learn this model is pretty simple. Moreover, this framework can be runned as REST web server or library(the executble setting is running by default). SWIG makes it possibly to wrapp up code for other languages such as Python, Java, R, Prel.
 
 So at first, we need to download source codes through git:

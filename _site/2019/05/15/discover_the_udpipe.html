@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=">
+
+<!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Discover the UDpipe | My site</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Discover the UDpipe" />
+<meta name="author" content="Astromis" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Let’s test some inline math , , , ." />
+<meta property="og:description" content="Let’s test some inline math , , , ." />
+<link rel="canonical" href="http://localhost:4000/2019/05/15/discover_the_udpipe.html" />
+<meta property="og:url" content="http://localhost:4000/2019/05/15/discover_the_udpipe.html" />
+<meta property="og:site_name" content="My site" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-05-15T00:00:00+03:00" />
+<script type="application/ld+json">
+{"description":"Let’s test some inline math , , , .","author":{"@type":"Person","name":"Astromis"},"@type":"BlogPosting","url":"http://localhost:4000/2019/05/15/discover_the_udpipe.html","headline":"Discover the UDpipe","dateModified":"2019-05-15T00:00:00+03:00","datePublished":"2019-05-15T00:00:00+03:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/05/15/discover_the_udpipe.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+
+          <h1 id="project_title">My site</h1>
+          <h2 id="project_tagline">Slate is a theme for GitHub Pages.</h2>
+          <a class="a" href="/">Home</a>
+          <a href="/blog.html">Blog</a>
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        
+  <!-- Mathjax Support -->
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<h1>Discover the UDpipe</h1>
+<p>15 May 2019 - Astromis</p>
+
+<p>Let’s test some inline math <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">x_1</script>, <script type="math/tex">y_1</script>.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*} %]]></script>
+
+<p>Recently, I had to get syntactic dependancy tree for my experements with sentence comprssion. There is one trouble - for russian language is pretty hard to find a good parser. Of course, there is syntax net fro google, but I didn’t want to dive into problems with dependances, version incopatibility and so on. So, I just was searching more simpler. And I’ve found. It is Universal Dependency Pipeline or UDPipe by Czech developer. This is c++ written framework that allows tokenize, tag and parse text. All you need is pre-treined model that for some languages can be downloaded or trained by yourself. This is sounds like a doubt, but don’t worry - to learn this model is pretty simple. Moreover, this framework can be runned as REST web server or library(the executble setting is running by default). SWIG makes it possibly to wrapp up code for other languages such as Python, Java, R, Prel.</p>
+
+<p>So at first, we need to download source codes through git:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/ufal/udpipe.git
+</code></pre></div></div>
+<p>Next, we go to ./src directory and run make</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd udpipe
+make
+</code></pre></div></div>
+<p>After that, we will obtain udpipe executble file.</p>
+
+<p>Now, we need in model. You can download a pre-trained model pack from <a href="http://ufal.mff.cuni.cz/udpipe/models">official site</a>. Just check your version and follow the content. It wouldn’t be hard.
+If there is no model for your language like for Russian, let’s try to find data for training <a href="https://github.com/UniversalDependencies">here</a>. Among the repositories you can try to search repo that contains treebank for requaired language as for Russian SynTagRus.</p>
+
+<p>Download it</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/UniversalDependencies/UD_Russian-SynTagRus.git
+</code></pre></div></div>
+<p>The things in that we have interest is ru_syntagrus-ud-dev(-train -test).conllu This is trebank that dividing to training and testing parts.</p>
+
+<p>Now, to train the UDPipe model tun this command from src directory</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat UD_Russian-SynTagRus/ru_syntagrus-ud-train.conllu | ./udpipe/src/udpipe --train rus_model
+</code></pre></div></div>
+<p>where rus_model is name of file in which model will be seved. So this process take some time, because tolenizer, tagger and parser are training.</p>
+
+<p>It is good so far, but let’s wrapp up this with Python just to speed up protoryping process. You can use pip or maniually compile this for both Python2.7 and Python3+. 
+For automatical installation just type</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install ufal.udpipe
+</code></pre></div></div>
+<p>For maniually compiling go to downloaded git repo in ./repo/bindings/python directory and just run</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make PYTON_INCLUDE=/path/to/python/include
+</code></pre></div></div>
+<p>What does this mean? You have to specify where python includes are. If you are using system python, make sure that you have installed python-dev(python3-dev) packege and type</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make PYTHON_INCLUDE=/usr/include/pythonX.Xm/
+</code></pre></div></div>
+<p>Why is it important? I don’t know yet, but empirically, if you are using anaconda, you should specify includes containing whithin anaconda, for example (Let’s assume, that anaconda3 have been installed in user home directory)</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make <span class="nv">PYTHON_INCLUDE</span><span class="o">=</span>/home/user_name/anaconda3/include/pythonX.Xm
+</code></pre></div></div>
+<p>If you didn’t do this, it woulde cause problems with using of this.</p>
+
+<p>Finally, you’ll get some files and trap is that make file doesn’t have an install option. I don’t understand yet how to correctly add all files in right places by hand, but in place in which you have compiled package all will work well.</p>
+
+<p>Author provides two scripts as exapmles of using udpipe. One of these bindings/python/exapmes/udpipe_model.py describes usefull class that makes easy to use to work with library. Here is an example of using directly from a file:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="s">'rus_model'</span><span class="p">)</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s">"Мама мыла раму."</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">conllu</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="s">"conllu"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">conllu</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The whole code you can see you own it is pretty easy and clearly.</p>
+
+<p>Here a couple of phrases about data representation. UDpip uses an CoNLL-U format that for syntax representation looks like that</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># sent_id = 1
+# text = They buy and sell books.
+1   They     they    PRON    PRP    Case=Nom|Number=Plur               2   nsubj   2:nsubj|4:nsubj   _
+2   buy      buy     VERB    VBP    Number=Plur|Person=3|Tense=Pres    0   root    0:root            _
+3   and      and     CONJ    CC     _                                  4   cc      4:cc              _
+4   sell     sell    VERB    VBP    Number=Plur|Person=3|Tense=Pres    2   conj    0:root|2:conj     _
+5   books    book    NOUN    NNS    Number=Plur                        2   obj     2:obj|4:obj       SpaceAfter=No
+6   .        .       PUNCT   .      _                                  2   punct   2:punct  
+</code></pre></div></div>
+<p>Here is 10 columns named</p>
+<ul>
+  <li>ID - word index</li>
+  <li>FORM - word form or punctuation symbol</li>
+  <li>LEMMA - lemma or stem of word form</li>
+  <li>UPOS - universal part of speech tag</li>
+  <li>XPOS - language specific part of speech tag</li>
+  <li>FEATS - list of morphological features</li>
+  <li>HEAD - head of the current word, which is either a value of ID or zero (0)</li>
+  <li>DEPREL - universal dependency relation to the HEAD (root if HEAD = 0) or a defined language-specific subtype of one</li>
+  <li>DEPS - enhanced dependency graph in the form of a list of head-deprel pairs</li>
+  <li>MISC - any other annotation.</li>
+</ul>
+
+<p>More about format you can found on <a href="http://universaldependencies.org/format.html">official site</a></p>
+
+<p>Using HEAD and ID fields we can build a dependancy tree. There are several servicies that can drawn the tree, <a href="http://www.let.rug.nl/kleiweg/conllu/">for example</a></p>
+
+<p><img src="/assets/images/syntax_tree_example.png" alt="Here is a screenshot of the tree" title="Example of tree visualisation" /></p>
+
+<p><a href="https://github.com/EmilStenstrom/conllu">This repo</a> contains a nice and light python library that can give you a way to manipulate CoNLL-U data.</p>
+
+<p>Links</p>
+
+<p>http://wiki.apertium.org/wiki/UDPipe</p>
+
+<p>Official site:
+http://ufal.mff.cuni.cz/udpipe</p>
+
+<p>CoNNL-U format:
+http://universaldependencies.org/format.html</p>
+
+<p>Repo with treebanks
+https://github.com/UniversalDependencies</p>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'true', 'auto');
+        ga('send', 'pageview');
+      </script>
+    
+  </body>
+</html>
