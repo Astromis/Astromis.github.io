@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-03T19:53:24+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Astromis notes</title><subtitle>Data Science, Natural Language Processing, Knowledge</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2022/07/03/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-07-03T16:52:27+03:00</published><updated>2022-07-03T16:52:27+03:00</updated><id>http://localhost:4000/jekyll/update/2022/07/03/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/07/03/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>Jekyll requires blog post files to be named according to the following format:</p>
+
+<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+
+<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">Discover the UDpipe</title><link href="http://localhost:4000/2019/05/15/discover_the_udpipe.html" rel="alternate" type="text/html" title="Discover the UDpipe" /><published>2019-05-15T00:00:00+03:00</published><updated>2019-05-15T00:00:00+03:00</updated><id>http://localhost:4000/2019/05/15/discover_the_udpipe</id><content type="html" xml:base="http://localhost:4000/2019/05/15/discover_the_udpipe.html"><![CDATA[<p>Recently, I had to get syntactic dependancy tree for my experements with sentence comprssion. There is one trouble - for russian language is pretty hard to find a good parser. Of course, there is syntax net fro google, but I didn’t want to dive into problems with dependances, version incopatibility and so on. So, I just was searching more simpler. And I’ve found. It is Universal Dependency Pipeline or UDPipe by Czech developer. This is c++ written framework that allows tokenize, tag and parse text. All you need is pre-treined model that for some languages can be downloaded or trained by yourself. This is sounds like a doubt, but don’t worry - to learn this model is pretty simple. Moreover, this framework can be runned as REST web server or library(the executble setting is running by default). SWIG makes it possibly to wrapp up code for other languages such as Python, Java, R, Prel.</p>
+
+<p>So at first, we need to download source codes through git:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/ufal/udpipe.git
+</code></pre></div></div>
+<p>Next, we go to ./src directory and run make</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd udpipe
+make
+</code></pre></div></div>
+<p>After that, we will obtain udpipe executble file.</p>
+
+<p>Now, we need in model. You can download a pre-trained model pack from <a href="http://ufal.mff.cuni.cz/udpipe/models">official site</a>. Just check your version and follow the content. It wouldn’t be hard.
+If there is no model for your language like for Russian, let’s try to find data for training <a href="https://github.com/UniversalDependencies">here</a>. Among the repositories you can try to search repo that contains treebank for requaired language as for Russian SynTagRus.</p>
+
+<p>Download it</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/UniversalDependencies/UD_Russian-SynTagRus.git
+</code></pre></div></div>
+<p>The things in that we have interest is ru_syntagrus-ud-dev(-train -test).conllu This is trebank that dividing to training and testing parts.</p>
+
+<p>Now, to train the UDPipe model tun this command from src directory</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat UD_Russian-SynTagRus/ru_syntagrus-ud-train.conllu | ./udpipe/src/udpipe --train rus_model
+</code></pre></div></div>
+<p>where rus_model is name of file in which model will be seved. So this process take some time, because tolenizer, tagger and parser are training.</p>
+
+<p>It is good so far, but let’s wrapp up this with Python just to speed up protoryping process. You can use pip or maniually compile this for both Python2.7 and Python3+. 
+For automatical installation just type</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install ufal.udpipe
+</code></pre></div></div>
+<p>For maniually compiling go to downloaded git repo in ./repo/bindings/python directory and just run</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make PYTON_INCLUDE=/path/to/python/include
+</code></pre></div></div>
+<p>What does this mean? You have to specify where python includes are. If you are using system python, make sure that you have installed python-dev(python3-dev) packege and type</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make PYTHON_INCLUDE=/usr/include/pythonX.Xm/
+</code></pre></div></div>
+<p>Why is it important? I don’t know yet, but empirically, if you are using anaconda, you should specify includes containing whithin anaconda, for example (Let’s assume, that anaconda3 have been installed in user home directory)</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make <span class="nv">PYTHON_INCLUDE</span><span class="o">=</span>/home/user_name/anaconda3/include/pythonX.Xm
+</code></pre></div></div>
+<p>If you didn’t do this, it woulde cause problems with using of this.</p>
+
+<p>Finally, you’ll get some files and trap is that make file doesn’t have an install option. I don’t understand yet how to correctly add all files in right places by hand, but in place in which you have compiled package all will work well.</p>
+
+<p>Author provides two scripts as exapmles of using udpipe. One of these bindings/python/exapmes/udpipe_model.py describes usefull class that makes easy to use to work with library. Here is an example of using directly from a file:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="s">'rus_model'</span><span class="p">)</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">tokenize</span><span class="p">(</span><span class="s">"Мама мыла раму."</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+  <span class="n">model</span><span class="p">.</span><span class="n">tag</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+  <span class="n">model</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">conllu</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="s">"conllu"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">conllu</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The whole code you can see you own it is pretty easy and clearly.</p>
+
+<p>Here a couple of phrases about data representation. UDpip uses an CoNLL-U format that for syntax representation looks like that</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># sent_id = 1
+# text = They buy and sell books.
+1   They     they    PRON    PRP    Case=Nom|Number=Plur               2   nsubj   2:nsubj|4:nsubj   _
+2   buy      buy     VERB    VBP    Number=Plur|Person=3|Tense=Pres    0   root    0:root            _
+3   and      and     CONJ    CC     _                                  4   cc      4:cc              _
+4   sell     sell    VERB    VBP    Number=Plur|Person=3|Tense=Pres    2   conj    0:root|2:conj     _
+5   books    book    NOUN    NNS    Number=Plur                        2   obj     2:obj|4:obj       SpaceAfter=No
+6   .        .       PUNCT   .      _                                  2   punct   2:punct  
+</code></pre></div></div>
+<p>Here is 10 columns named</p>
+<ul>
+  <li>ID - word index</li>
+  <li>FORM - word form or punctuation symbol</li>
+  <li>LEMMA - lemma or stem of word form</li>
+  <li>UPOS - universal part of speech tag</li>
+  <li>XPOS - language specific part of speech tag</li>
+  <li>FEATS - list of morphological features</li>
+  <li>HEAD - head of the current word, which is either a value of ID or zero (0)</li>
+  <li>DEPREL - universal dependency relation to the HEAD (root if HEAD = 0) or a defined language-specific subtype of one</li>
+  <li>DEPS - enhanced dependency graph in the form of a list of head-deprel pairs</li>
+  <li>MISC - any other annotation.</li>
+</ul>
+
+<p>More about format you can found on <a href="http://universaldependencies.org/format.html">official site</a></p>
+
+<p>Using HEAD and ID fields we can build a dependancy tree. There are several servicies that can drawn the tree, <a href="http://www.let.rug.nl/kleiweg/conllu/">for example</a></p>
+
+<p><img src="/assets/images/syntax_tree_example.png" alt="Here is a screenshot of the tree" title="Example of tree visualisation" /></p>
+
+<p><a href="https://github.com/EmilStenstrom/conllu">This repo</a> contains a nice and light python library that can give you a way to manipulate CoNLL-U data.</p>
+
+<p>Links</p>
+
+<p>http://wiki.apertium.org/wiki/UDPipe</p>
+
+<p>Official site:
+http://ufal.mff.cuni.cz/udpipe</p>
+
+<p>CoNNL-U format:
+http://universaldependencies.org/format.html</p>
+
+<p>Repo with treebanks
+https://github.com/UniversalDependencies</p>]]></content><author><name>Astromis</name></author><summary type="html"><![CDATA[Recently, I had to get syntactic dependancy tree for my experements with sentence comprssion. There is one trouble - for russian language is pretty hard to find a good parser. Of course, there is syntax net fro google, but I didn’t want to dive into problems with dependances, version incopatibility and so on. So, I just was searching more simpler. And I’ve found. It is Universal Dependency Pipeline or UDPipe by Czech developer. This is c++ written framework that allows tokenize, tag and parse text. All you need is pre-treined model that for some languages can be downloaded or trained by yourself. This is sounds like a doubt, but don’t worry - to learn this model is pretty simple. Moreover, this framework can be runned as REST web server or library(the executble setting is running by default). SWIG makes it possibly to wrapp up code for other languages such as Python, Java, R, Prel.]]></summary></entry></feed>
