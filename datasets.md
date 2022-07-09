@@ -5,11 +5,13 @@ permalink: /datasets/
 ---
 
 
+This is yet another collider list of Russian language resources for NLP basically for personal use. 
+
 # Sites
 
 * [NLPub](https://nlpub.ru/%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B) contains links to vocab, thesauri, corpora and other resources 
 * [Tatiana Shavrina's page](https://tatianashavrina.github.io/2018/08/30/datasets/ ) where various datasets and corpura are listed. Moreover [some derivatives are presented](https://tatianashavrina.github.io/2018/08/30/datasets/#open-corpus-derivatives)
-* [Metatext dataset databse](https://metatext.io/datasets) which contains mingblowind number of corpouses on various languages including Russian.
+* [Metatext dataset database](https://metatext.io/datasets) which contains mingblowind number of corpouses on various languages including Russian.
 * [Ilya Koziev's github repo](https://github.com/Koziev/NLP_Datasets) with various datasets and recources.
 
 
