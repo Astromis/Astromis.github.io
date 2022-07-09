@@ -1,0 +1,3 @@
+_site/*
+.jejyll-cache/*
+.sass-cache/*
