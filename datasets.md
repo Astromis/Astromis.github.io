@@ -5,15 +5,17 @@ permalink: /datasets/
 ---
 
 
-This is yet another collider list of Russian language resources for NLP basically for personal use. 
+This is yet another collider list of Russian language datasets and recources for NLP basically for personal use. 
 
-# Sites
 
-* [NLPub](https://nlpub.ru/%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B) contains links to vocab, thesauri, corpora and other resources 
-* [Tatiana Shavrina's page](https://tatianashavrina.github.io/2018/08/30/datasets/ ) where various datasets and corpura are listed. Moreover [some derivatives are presented](https://tatianashavrina.github.io/2018/08/30/datasets/#open-corpus-derivatives)
-* [Metatext dataset database](https://metatext.io/datasets) which contains mingblowind number of corpouses on various languages including Russian.
-* [Ilya Koziev's github repo](https://github.com/Koziev/NLP_Datasets) with various datasets and recources.
 
+# General datasets
+
+* [Dataset of depressive and suicidal posts](https://data.mendeley.com/datasets/838dbcjpxb/1) - dataset gathered from VK social network for depreission and suicidal detection
+* [Dataset for presuicidal signal detection](https://data.mendeley.com/datasets/86v3z38dc7/1) - dataset the was built from twitter post of persons that gave middle and high suicidal risk. Dedicated for detection suicidal behaivour features.
+* [RuAdapt](https://github.com/Digital-Pushkin-Lab/RuAdapt) - a parallel dataset in which target texts are simplified versions of the source texts. It is suitable for automatic text simplification as well as for studying how human experts simplify texts.
+* [Small Student Science Corpus](https://github.com/Astromis/Small-Student-Science-Corpus) - a text collection from student scientific papers with title, abstract, keywords and paragraph segmentation annotation.
+* [RuCoCo](https://github.com/vdobrovolskii/rucoco) - Russian Coreference Corpus.
 
 # [Russian sentiment analysis dataset table](https://habr.com/ru/company/mailru/blog/516730/)
 
@@ -34,7 +36,9 @@ This is yet another collider list of Russian language resources for NLP basicall
 | Kaggle IS161AIDAY                                 | Набор с примерами настроений, опубликованный Alem Research.                                                                                                                     | не указано     | 3      | https://www.kaggle.com/c/is161aiday/discussion                           |
 | Kaggle Russian_twitter_sentiment                  | Набор с примерами настроений из русскоязычных Twitter-сообщений.                                                                                                                | не указано     | 2      | https://www.kaggle.com/thorinhood/russian-twitter-sentiment              |
 
-# Other datasets
+# Sites
 
-* [Dataset of depressive and suicidal posts](https://data.mendeley.com/datasets/838dbcjpxb/1) - dataset gathered from VK social network for depreission and suicidal detection
-* [Dataset for presuicidal signal detection](https://data.mendeley.com/datasets/86v3z38dc7/1) - dataset the was built from twitter post of persons that gave middle and high suicidal risk. Dedicated for detection suicidal behaivour features.
+* [NLPub](https://nlpub.ru/%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B) contains links to vocab, thesauri, corpora and other resources.
+* [Tatiana Shavrina's page](https://tatianashavrina.github.io/2018/08/30/datasets/ ) where various datasets and corpura are listed. Moreover [some derivatives are presented](https://tatianashavrina.github.io/2018/08/30/datasets/#open-corpus-derivatives).
+* [Metatext dataset database](https://metatext.io/datasets) which contains mindblowind number of corpouses on various languages including Russian.
+* [Ilya Koziev's github repo](https://github.com/Koziev/NLP_Datasets) with various datasets and resourses.
