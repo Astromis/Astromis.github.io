@@ -5,7 +5,7 @@ title: Discover the UDpipe
 use_math: false
 --- 
 
-Recently, I had to get syntactic dependancy tree for my experements with sentence comprssion. There is one trouble - for russian language is pretty hard to find a good parser. Of course, there is syntax net fro google, but I didn't want to dive into problems with dependances, version incopatibility and so on. So, I just was searching more simpler. And I've found. It is Universal Dependency Pipeline or UDPipe by Czech developer. This is c++ written framework that allows tokenize, tag and parse text. All you need is pre-treined model that for some languages can be downloaded or trained by yourself. This is sounds like a doubt, but don't worry - to learn this model is pretty simple. Moreover, this framework can be runned as REST web server or library(the executble setting is running by default). SWIG makes it possibly to wrapp up code for other languages such as Python, Java, R, Prel.
+Recently, I had to get syntactic dependency tree for my experiments with sentence compression. There is one trouble - for russian language is pretty hard to find a good parser. Of course, there is syntax net fro google, but I didn't want to dive into problems with dependencies, version incompatibility and so on. So, I just was searching more simpler. And I've found. It is Universal Dependency Pipeline or UDPipe by Czech developer. This is c++ written framework that allows tokenize, tag and parse text. All you need is pretrained model that for some languages can be downloaded or trained by yourself. This is sounds like a doubt, but don't worry - to learn this model is pretty simple. Moreover, this framework can be run as REST web server or library(the executable setting is running by default). SWIG makes it possibly to wrap up code for other languages such as Python, Java, R, Perl.
 
 So at first, we need to download source codes through git:
 ```
@@ -16,10 +16,10 @@ Next, we go to ./src directory and run make
 cd udpipe
 make
 ```
-After that, we will obtain udpipe executble file.
+After that, we will obtain udpipe executable file.
 
 Now, we need in model. You can download a pre-trained model pack from [official site]( http://ufal.mff.cuni.cz/udpipe/models). Just check your version and follow the content. It wouldn't be hard.
-If there is no model for your language like for Russian, let's try to find data for training [here](https://github.com/UniversalDependencies). Among the repositories you can try to search repo that contains treebank for requaired language as for Russian SynTagRus.
+If there is no model for your language like for Russian, let's try to find data for training [here](https://github.com/UniversalDependencies). Among the repositories you can try to search repo that contains treebank for required language as for Russian SynTagRus.
 
 Download it
 ```
@@ -31,30 +31,30 @@ Now, to train the UDPipe model tun this command from src directory
 ```
 cat UD_Russian-SynTagRus/ru_syntagrus-ud-train.conllu | ./udpipe/src/udpipe --train rus_model
 ```
-where rus_model is name of file in which model will be seved. So this process take some time, because tolenizer, tagger and parser are training.
+where rus_model is name of file in which model will be saved. So this process take some time, because tokenizer, tagger and parser are training.
 
-It is good so far, but let's wrapp up this with Python just to speed up protoryping process. You can use pip or maniually compile this for both Python2.7 and Python3+. 
-For automatical installation just type
+It is good so far, but let's wrap up this with Python just to speed up prototyping process. You can use pip or manually compile this for both Python2.7 and Python3+. 
+For automatic installation just type
 ```
 pip install ufal.udpipe
 ```
-For maniually compiling go to downloaded git repo in ./repo/bindings/python directory and just run
+For manually compiling go to downloaded git repo in ./repo/bindings/python directory and just run
 ```
-make PYTON_INCLUDE=/path/to/python/include
+make PYTHON_INCLUDE=/path/to/python/include
 ```
-What does this mean? You have to specify where python includes are. If you are using system python, make sure that you have installed python-dev(python3-dev) packege and type
+What does this mean? You have to specify where python includes are. If you are using system python, make sure that you have installed python-dev(python3-dev) package and type
 ```
 make PYTHON_INCLUDE=/usr/include/pythonX.Xm/
 ```
-Why is it important? I don't know yet, but empirically, if you are using anaconda, you should specify includes containing whithin anaconda, for example (Let's assume, that anaconda3 have been installed in user home directory)
+Why is it important? I don't know yet, but empirically, if you are using anaconda, you should specify includes containing within anaconda, for example (Let's assume, that anaconda3 have been installed in user home directory)
 ```bash
 make PYTHON_INCLUDE=/home/user_name/anaconda3/include/pythonX.Xm
 ```
-If you didn't do this, it woulde cause problems with using of this.
+If you didn't do this, it would cause problems with using of this.
 
 Finally, you'll get some files and trap is that make file doesn't have an install option. I don't understand yet how to correctly add all files in right places by hand, but in place in which you have compiled package all will work well.
 
-Author provides two scripts as exapmles of using udpipe. One of these bindings/python/exapmes/udpipe_model.py describes usefull class that makes easy to use to work with library. Here is an example of using directly from a file:
+Author provides two scripts as examples of using udpipe. One of these bindings/python/examples/udpipe_model.py describes useful class that makes easy to use to work with library. Here is an example of using directly from a file:
 
 ```python 
 model = Model('rus_model')
@@ -93,9 +93,9 @@ Here is 10 columns named
 
 More about format you can found on [official site](http://universaldependencies.org/format.html)
 
-Using HEAD and ID fields we can build a dependancy tree. There are several servicies that can drawn the tree, [for example](http://www.let.rug.nl/kleiweg/conllu/)
+Using HEAD and ID fields we can build a dependency tree. There are several services that can drawn the tree, [for example](http://www.let.rug.nl/kleiweg/conllu/)
 
-![Here is a screenshot of the tree](/assets/images/syntax_tree_example.png "Example of tree visualisation")
+![Here is a screenshot of the tree](/assets/images/syntax_tree_example.png "Example of tree visualization")
 
 [This repo](https://github.com/EmilStenstrom/conllu) contains a nice and light python library that can give you a way to manipulate CoNLL-U data.
 
