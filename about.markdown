@@ -29,7 +29,10 @@ You may contact with me by
   author={Igor Buyanov and Ilya Sochenkov},
   journal={Computational Linguistics and Intellectual Technologies},
   year={2022},
-  url={https://api.semanticscholar.org/CorpusID:253195162}
+  month={June},
+  number={21},
+  pages={81--92},
+  url={https://api.semanticscholar.org/CorpusID:253195162},
 }
 ```
 
@@ -44,8 +47,11 @@ You may contact with me by
 @article{Buyanov2023WhoIA,
   title={Who is answering to whom? Modeling reply-to relationships in Russian asynchronous chats},
   author={Igor Buyanov and and Darya Yaskova and Ilya Sochenkov},
-  journal={Computational Linguistics and Intellectual Technologies},
+  journal={Computational Linguistics and Intellectual Technologies (Supplementary volume)},
   year={2023},
+  month={June},
+  number={22},
+  pages={1052--1060},
   url={https://www.dialog-21.ru/media/5871/buyanoviplusetal046.pdf}
 }
 ```
