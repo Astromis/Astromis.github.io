@@ -1,20 +1,20 @@
 ---
 layout: page
-title: About
+title: Обо мне
 permalink: /about/
 ---
 
-# General
+# Привет
 
-Hello, I'm Igor Buyanov, natural language processing researcher.
+Меня зовут Игорь Буянов. Я ML-инженер со специализацией в NLP. Работаю в MTS AI старшим разработчиком. Моя основная задача - разрабатывать модели классификации для голосового чат-бота МТС. Я успел два года поработать в команде разметки данных, где выстроил всю техническую часть процесса. Еще я аспирант в ФИЦ ИУ РАН. Там занимаюсь вопросами, как NLP может помочь в решении проблем с психическим здоровьем, особенно депрессии и самоубийства.
 
-You can check out my CV on [LinkedIn](https://www.linkedin.com/in/igor-buyanov/).
+Актуальное резюме доступно на [LinkedIn](https://www.linkedin.com/in/igor-buyanov/).
 
-You may contact with me by 
+Мои контакты:
 * Email: buyanov.igor.o@yandex.ru
 * Telegram: [@Astromis](https://t.me/Astromis)
 
-# Papers
+# Мои статьи
 
 ## The dataset for presuicidal signals detection in text and its analysis
 
