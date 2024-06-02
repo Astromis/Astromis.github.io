@@ -20,7 +20,7 @@ permalink: /about/
 
 **Abstract:** The paper says about dataset for presuicidal signal detection in Russian posts from social media. To the best of our knowledge, it is a first dataset of a such type for this language. We develop a collection methodology and conduct linguistic analysis of completed dataset. We also build a classification baseline with machine learning models to solve the detection task.
 
-([paper](./assets/pdf/buyanoviplussochenkovi046.pdf), [code](https://github.com/Astromis/research/tree/master/presuicidal_detection_dataset), [dataset](https://data.mendeley.com/datasets/86v3z38dc7/1))
+([paper](./assets/pdf/buyanoviplussochenkovi046.pdf), [doi](https://www.doi.org/10.28995/2075-7182-2022-21-81-98), [code](https://github.com/Astromis/research/tree/master/presuicidal_detection_dataset), [dataset](https://data.mendeley.com/datasets/86v3z38dc7/1))
 
 **Cite**:
 ```bibtex
@@ -40,7 +40,7 @@ permalink: /about/
 
 **Abstract:** The study highlights the asynchronous nature of modern group chats and related problems such as retrieving relevant information on the asked question and understanding reply-to relationships. In this work, we formalize the reply recovery task as a building block toward solving described problems. Using simple heuristics, we try to apply the result reply recovery model to a thread reconstruction problem. As a result, we show that modern pre-trained models such as BERT show great results on the task of reply recovery compared to more simple models, though it cannot be applied to thread reconstruction with just simple heuristics. In addition, experiments have shown that model performance depends on the chat domain. We open-sourced a model that can automatically predict which message the particular reply responds to and provide a representative Russian dataset that we built from Telegram chats of different domains. We also provide a test set for a thread reconstruction task.
 
-([paper](./assets/pdf/buyanoviplusetal046.pdf), [code](https://github.com/Astromis/research/tree/master/reply_recovery), [model](https://huggingface.co/astromis/rubert_reply_recovery), [dataset for the reply recovery](https://data.mendeley.com/datasets/xm86yszck2/1), [dataset for the thread reconstruction](https://data.mendeley.com/datasets/7rms5vdhf8/1))
+([paper](./assets/pdf/buyanoviplusetal046.pdf), [doi](https://www.doi.org/10.28995/2075-7182-2023-22-1052-1060), [code](https://github.com/Astromis/research/tree/master/reply_recovery), [model](https://huggingface.co/astromis/rubert_reply_recovery), [dataset for the reply recovery](https://data.mendeley.com/datasets/xm86yszck2/1), [dataset for the thread reconstruction](https://data.mendeley.com/datasets/7rms5vdhf8/1))
 
 **Cite**:
 ```bibtex
@@ -56,3 +56,37 @@ permalink: /about/
 }
 ```
 
+## Нейросетевые методы сжатия векторов для задачи приближенного поиска ближайших соседей
+
+**Аннотация**: В статье проверяется гипотеза применимости нейросетевых автокодировщиков как метод векторного сжатия для задачи приближенного поиска ближайших соседей. Проверка проводилась на нескольких больших датасетах с различными архитектурами автокодировщиков и индексов. Она показала, что, хотя ни одна из комбинаций автокодировщиков и индексов не может полностью превзойти чистые решения, в некоторых случаях они могут быть полезными. Мы также выявили некоторые эмпирические связи оптимальной размерности скрытого слоя и внутренней размерности наборов данных. Было также показано, что функция потерь является определяющим фактором качества сжатия.
+
+([paper](./assets/pdf/Buyanov2024-ps.pdf), [doi](https://doi.org/10.15514/ISPRAS-2024-36(1)-1),)
+
+**Cite**:
+```bibtex
+@ARTICLE{Buyanov2024-ps,
+  title     = "Neural vector compression in approximate nearest neighbor search
+               on large datasets",
+  author    = "Buyanov, Igor Olegovich and Yadrinsev, Vasiliy Vladimirovich and
+               Sochenkov, Ilia Vladimirovich",
+  abstract  = "The paper examines the hypothesis of the applicability of neural
+               autoencoders as a method of vector compression in the pipeline
+               of approximate nearest neighbor search. The evaluation was
+               conducted on several large datasets using various autoencoder
+               architectures and indexes. It has been demonstrated that,
+               although none of the combinations of autoencoders and indexes
+               can fully outperform pure solutions, in some cases, they can be
+               useful. Additionally, we have identified some empirical
+               relationships between the optimal dimensionality of the hidden
+               layer and the internal dimensionality of the datasets. It has
+               also been shown that the loss function is a determining factor
+               for compression quality.",
+  journal   = "Proc. Inst. Syst. Program. RAS",
+  publisher = "Institute for System Programming of the Russian Academy of
+               Sciences",
+  volume    =  36,
+  number    =  1,
+  pages     = "7--22",
+  year      =  2024
+}
+```
