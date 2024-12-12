@@ -20,11 +20,11 @@ permalink: /useful_apps/
 * [Titanis](https://github.com/tchewik/titanis-open) — тоже самое, что и предыдущее, но только для русского языка. Включает редкую штуку — дискурсивный анализ.  
 
 # Фреймворки
-* [Human Learn](https://github.com/koaning/human-learn) — scikit-совместимый пакет, который позволяет создавать руловые классификаторы. Киллер фича — можно нарисовать (https://koaning.github.io/human-learn/guide/drawing-classifier/drawing.html) границу принятия решений. А еще интерактивка (https://koaning.github.io/human-learn/guide/function-classifier/function-classifier.html#guidance) для анализа. Конечно, пакет больше для табличного анализа данных, но, кмк, для поиска слабых правил для создания предразметки сойдет.
+* [Human Learn](https://github.com/koaning/human-learn) — scikit-совместимый пакет, который позволяет создавать руловые классификаторы. Киллер фича — можно [нарисовать](https://koaning.github.io/human-learn/guide/drawing-classifier/drawing.html) границу принятия решений. А еще есть [интерактивка](https://koaning.github.io/human-learn/guide/function-classifier/function-classifier.html#guidance) для анализа. Конечно, пакет больше для табличного анализа данных, но, кмк, для поиска слабых правил для создания предразметки сойдет.
 * [mlxtend](https://github.com/rasbt/mlxtend) — набор разных инструментов для анализа данных. Почти полностью перекрывается scikit-learn, кроме алгоритмов майнинга паттернов.
 * [cleanlab](https://github.com/cleanlab/cleanlab) — библиотека для читски датасетов. Ребята мощные, с кучей статей по этой теме. Руки пока так и не дошли самому попробовать.
 * [Torch-Pruning](https://github.com/VainF/Torch-Pruning) — серьезная библиотека для прунинга сеток. 
-* [DataDreamer][https://github.com/datadreamer-dev/DataDreamer] — фреймворк на случай, если нужно сделать синтетику через БЯМ, обучить БЯМ или просто с затравками поработать. Видимо для тех случаев, когда LangChain использовать через чур.
+* [DataDreamer](https://github.com/datadreamer-dev/DataDreamer) — фреймворк на случай, если нужно сделать синтетику через БЯМ, обучить БЯМ или просто с затравками поработать. Видимо для тех случаев, когда LangChain использовать через чур.
 * [EasyInstruct](https://github.com/zjunlp/EasyInstruct) — фреймворк для работы с инструктивными датасетами. Содержит несколько методов синтеза и отбора таких датасетов. Естественно, имеется возможность подключить известные БЯМ через API. Есть модуль для работы с затравками. Схож с DataDreemer.
 * [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) — фреймворк для обучения Ллам и не только. Поддерживает пару десятков модели, из коробки можно подтянуть известные датасеты для разных задач, реализованы разные варианты PEFT.
 
