@@ -50,3 +50,5 @@ permalink: /datasets/
 * [Страница на сайте Татьяны Шавриной](https://tatianashavrina.github.io/2018/08/30/datasets/) где перечислены различные наборы данных и корпусы. Кроме того, [представлены некоторые производные](https://tatianashavrina.github.io/2018/08/30/datasets/#open-corpus-derivatives).
 * [Metatext dataset database](https://metatext.io/datasets) содержит умопомрачительное количество корпусов на различных языках, включая русский.
 * [Репозиторий Ильи Козиева](https://github.com/Koziev/NLP_Datasets) с различными наборами данных и ресурсами.
+* [kartaslov](https://github.com/dkulagin/kartaslov) — открытые данные от проекта "Карта слов". Уникальный проект, спасибо авторам. Включает тональный словарь, разметку слов с семантикой, датасет с ассоциациями, датасет с орфографическими ошибками и опечатками.
+* [corpora](https://github.com/dariusk/corpora) — набор разных словарей на английском языке для создания ботов.
