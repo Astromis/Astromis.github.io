@@ -34,6 +34,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   
+# Google Analytics
+google_analytics: G-0QW5RTGY6R
 
 # Exclude from processing.
 # The following items will not be processed, by default.
