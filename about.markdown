@@ -13,6 +13,7 @@ permalink: /about/
 Мои контакты:
 * Email: buyanov.igor.o@yandex.ru
 * Telegram: [@Astromis](https://t.me/Astromis)
+* Github: https://github.com/Astromis
 
 # Мои статьи
 
@@ -69,18 +70,6 @@ permalink: /about/
                on large datasets",
   author    = "Buyanov, Igor Olegovich and Yadrinsev, Vasiliy Vladimirovich and
                Sochenkov, Ilia Vladimirovich",
-  abstract  = "The paper examines the hypothesis of the applicability of neural
-               autoencoders as a method of vector compression in the pipeline
-               of approximate nearest neighbor search. The evaluation was
-               conducted on several large datasets using various autoencoder
-               architectures and indexes. It has been demonstrated that,
-               although none of the combinations of autoencoders and indexes
-               can fully outperform pure solutions, in some cases, they can be
-               useful. Additionally, we have identified some empirical
-               relationships between the optimal dimensionality of the hidden
-               layer and the internal dimensionality of the datasets. It has
-               also been shown that the loss function is a determining factor
-               for compression quality.",
   journal   = "Proc. Inst. Syst. Program. RAS",
   publisher = "Institute for System Programming of the Russian Academy of
                Sciences",
@@ -91,10 +80,28 @@ permalink: /about/
 }
 ```
 
+## Transferring Natural Language Datasets Between Languages Using Large Language Models for Modern Decision Support and Sci-Tech Analytical Systems
+
+**Abstract**: The decision-making process to rule R&D relies on information related to current trends in particular research areas. In this work, we investigated how one can use large language models (LLMs) to transfer the dataset and its annotation from one language to another. This is crucial since sharing knowledge between different languages could boost certain underresourced directions in the target language, saving lots of effort in data annotation or quick prototyping. We experiment with English and Russian pairs, translating the DEFT (Definition Extraction from Texts) corpus. This corpus contains three layers of annotation dedicated to term-definition pair mining, which is a rare annotation type for Russian. The presence of such a dataset is beneficial for the natural language processing methods of trend analysis in science since the terms and definitions are the basic blocks of any scientific field. We provide a pipeline for the annotation transfer using LLMs. In the end, we train the BERT-based models on the translated dataset to establish a baseline.
+
+([paper](./assets/pdf/BDCC-09-00116-with-cover.pdf), [doi](https://doi.org/10.3390/bdcc9050116), [code](https://github.com/Astromis/research/tree/master/rudeft), [dataset](https://huggingface.co/datasets/astromis/ruDEFT))
+
+**Cite**:
+```bibtex
+@article{Popov2025TransferringNL,
+  title={Transferring Natural Language Datasets Between Languages Using Large Language Models for Modern Decision Support and Sci-Tech Analytical Systems},
+  author={Dmitrii Popov and Egor Terentev and Danil Serenko and Ilya Sochenkov and Igor Buyanov},
+  journal={Big Data and Cognitive Computing},
+  year={2025},
+  url={https://api.semanticscholar.org/CorpusID:278179500}
+}
+```
+
 # Выступления
 
 Люблю выступать и делиться знаниями с публикой. Выступал как с докладами на научных конференциях, так и на индустриальных. 
 
+- В апреле 2025 года выступал на Moscow Python, где рассказывал, как мы с командой Пситехлаб собирали датасет пресуицидальных сигналов. ([ютуб](https://www.youtube.com/watch?v=Nb7VwpjRFf8))
 - В декабре 2024 выступал на конференции ИСП РАН, где обзорно рассказывал про систему классификации текстов с пресуицидальными признаками. ([ютуб](https://www.youtube.com/watch?v=GYB8EDpp-EQ))
 - В июне 2024 выступал на Pyconf 2024 с докладом «Долой рандом, или ищем лучшие настройки для аугментации текстов» ([ютуб](https://www.youtube.com/watch?v=KPeM1XNXeYA&t=2s))
 - В декабре 2023 выступал на конференции ИСП РАН, где выступил с докладом по статье «Нейросетевые методы сжатия векторов» ([ютуб](https://www.youtube.com/live/TQw55LMArBs?si=V-gQw13AEvCYx20E&t=9530))
