@@ -40,6 +40,7 @@ permalink: /useful_apps/
 
 # Разное
 * [minGPT](https://github.com/karpathy/minGPT) — минимальная имплементация GPT от Андрея Карпатого. Для образовательных целей.
-* [comparing-corpora](https://github.com/IBM/comparing-corpora) — ресерчекий код с разными метриками для сравнения корпусов. Читать обзора статьи здесь (https://t.me/yet_another_nlp_notes/15).
+* [comparing-corpora](https://github.com/IBM/comparing-corpora) — ресерчекий код с разными метриками для сравнения корпусов. Читать обзора статьи [здесь](https://t.me/yet_another_nlp_notes/15).
 * [ruformers](https://github.com/AlexeyMalafeev/ruformers) — список популярных открытых базовых моделей на основе трансформеров для решения задач по автоматической обработке русского языка.
 * [russian_paraphrasers](https://github.com/RussianNLP/russian_paraphrasers) — ресерческая репа с моделями перефраз и кодом для их запуска.
+* [nano-vLLM](https://github.com/GeeeekExplorer/nano-vllm) — облегченная имплементация движка vLLM для инференса БЯМ в 1200 строк кода.
