@@ -20,7 +20,7 @@ permalink: /useful_apps/
 * [Titanis](https://github.com/tchewik/titanis-open) — тоже самое, что и предыдущее, но только для русского языка. Включает редкую штуку — дискурсивный анализ.
 * [fuzzup](https://github.com/ebanalyse/fuzzup/tree/main) — библиотека, которая позволяет производить кластеризкацию похожих строк.
 * [RapidFuzz](https://github.com/rapidfuzz/RapidFuzz) — библиотека, в которой реализованы разные метрики похожести строк. Подсчёт реализован на С++.
-* [Fonetika](https://github.com/roddar92/russian_soundex) — юиюлиотека, в которой реализован Soundex и Metaphone для русского языка, а также для английского, шведского, эстонского и финского языков.
+* [Fonetika](https://github.com/roddar92/russian_soundex) — биюлиотека, в которой реализован Soundex и Metaphone для русского языка, а также для английского, шведского, эстонского и финского языков.
 
 # Фреймворки
 * [Human Learn](https://github.com/koaning/human-learn) — scikit-совместимый пакет, который позволяет создавать руловые классификаторы. Киллер фича — можно [нарисовать](https://koaning.github.io/human-learn/guide/drawing-classifier/drawing.html) границу принятия решений. А еще есть [интерактивка](https://koaning.github.io/human-learn/guide/function-classifier/function-classifier.html#guidance) для анализа. Конечно, пакет больше для табличного анализа данных, но, кмк, для поиска слабых правил для создания предразметки сойдет.
@@ -44,3 +44,4 @@ permalink: /useful_apps/
 * [ruformers](https://github.com/AlexeyMalafeev/ruformers) — список популярных открытых базовых моделей на основе трансформеров для решения задач по автоматической обработке русского языка.
 * [russian_paraphrasers](https://github.com/RussianNLP/russian_paraphrasers) — ресерческая репа с моделями перефраз и кодом для их запуска.
 * [nano-vLLM](https://github.com/GeeeekExplorer/nano-vllm) — облегченная имплементация движка vLLM для инференса БЯМ в 1200 строк кода.
+* [nanochat](https://github.com/karpathy/nanochat) — имплементация работающей БЯМ с читой, минимальной, слабозависимой кодовой базой. Специально для обучения и исследования. 
