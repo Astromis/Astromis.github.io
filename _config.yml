@@ -23,7 +23,7 @@ email: buyanov.igor.o@yandex.ru
 description: >- # this means to ignore newlines until "baseurl:"
   Data Science, Natural Language Processing, Knowledge
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://astromis.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://astromis.ru" # the base hostname & protocol for your site, e.g. http://example.com
 telegram_username: Astromis
 github_username:  Astromis
 
